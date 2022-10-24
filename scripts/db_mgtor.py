@@ -61,6 +61,7 @@ def validation(validationQueryList,flag,query_name,seq,cursor) :
         outputSchema = validationQueryList[i]['output_schema']
         temp_query=str(draftQuery)
 
+
         if queryType == flag and queryName == query_name :
             print('')
             for j in range(len(runParamSet)) :
