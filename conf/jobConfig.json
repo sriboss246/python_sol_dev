@@ -1,0 +1,46 @@
+{
+  "oto_params": {
+
+    "table_names": [""],
+    "backup": "true",
+    "backup_query": "create table if not exists $backup_table_name as select * from $table_name",
+    "validations": "true",
+
+    "oto_queries": [
+      {
+        "query_name": "",
+        "draft_query": "",
+        "param_key_list": [
+          "replace_column"
+        ],
+        "run_param_list": [
+          {
+            "replace_column": "value"
+          }
+        ]
+      }
+        ],
+    "validation_queries": [
+      {
+        "query_name": "",
+        "query_type": "pre",
+        "draft_query": "",
+        "output_schema": ["count"],
+        "param_key_list": [""],
+        "run_param_set": [
+          {
+            "expected_value": [{"count": 1}]
+          }
+
+        ]
+
+      }
+
+    ]
+
+      }
+
+
+
+
+}
