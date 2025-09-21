@@ -98,7 +98,7 @@ def validation(validationQueryList,flag,query_name,seq,cursor) :
                             if expectedCounter > expectedLen :
                                 print('')
                                 return
-                            if flag=='true'
+                            if flag=='true':
                                 print('data match')
 
 
@@ -129,7 +129,7 @@ def data_oto() :
 
     for i in range(length) :
         query_name=queries[i]['query_name']
-        query_draft=queries[i]['draft_name']
+        query_draft=queries[i]['draft_query']
         temp_query=str(query_draft)
         param_key_list=queries[i]['param_key_list']
         run_param_set=queries[i]['run_param_set']

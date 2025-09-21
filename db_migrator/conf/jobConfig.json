@@ -1,34 +1,37 @@
 {
   "oto_params": {
 
-    "table_names": [""],
-    "backup": "true",
+    "table_names": ["process_master"],
+    "backup": "false",
     "backup_query": "create table if not exists $backup_table_name as select * from $table_name",
     "validations": "true",
 
     "oto_queries": [
       {
-        "query_name": "",
-        "draft_query": "",
+        "query_name": "data_insert",
+        "draft_query": "insert into process_master (process_id,process_name,process_type,description,update_time,insert_time) values ('$process_id','$process_name','$process_type','$description',current_timestamp,current_timestamp) ",
         "param_key_list": [
-          "replace_column"
+          "process_id","process_name","process_type","description"
         ],
-        "run_param_list": [
+        "run_param_set": [
           {
-            "replace_column": "value"
+            "process_id": "process101",
+			"process_name" : "INIT_PR",
+			"process_type":"CREATE",
+			"description":"Initiation Process"
           }
         ]
       }
         ],
     "validation_queries": [
       {
-        "query_name": "",
-        "query_type": "pre",
-        "draft_query": "",
+        "query_name": "data_insert",
+        "query_type": "post",
+        "draft_query": "select count(1) from process_master where process_id='$process_id' ",
         "output_schema": ["count"],
-        "param_key_list": [""],
+        "param_key_list": ["process_id"],
         "run_param_set": [
-          {
+          { "process_id":"process101",
             "expected_value": [{"count": 1}]
           }
 
