@@ -15,10 +15,10 @@
         ],
         "run_param_set": [
           {
-            "process_id": "process101",
-			"process_name" : "INIT_PR",
+            "process_id": "process102",
+			"process_name" : "INIT_PR1",
 			"process_type":"CREATE",
-			"description":"Initiation Process"
+			"description":"Initiation Process2"
           }
         ]
       }
@@ -31,7 +31,7 @@
         "output_schema": ["count"],
         "param_key_list": ["process_id"],
         "run_param_set": [
-          { "process_id":"process101",
+          { "process_id":"process102",
             "expected_value": [{"count": 1}]
           }
 
