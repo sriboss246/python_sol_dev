@@ -16,5 +16,11 @@ as results matched :
 Data table inserted as expected - 
 <img width="933" height="90" alt="image" src="https://github.com/user-attachments/assets/ceaf804d-b8ef-4ee2-8c6b-5980256c150e" />
 
+Docker Run Commands - 
+1) Open cmd, goto project location
+2) Run to build docker image - /> docker build -t db_mgtor_image .
+3) Run docker container with built image - />docker run --network=host -it db_mgtor_image bash -c "bash"
+4) Run app command in docker prompt - root@docker-desktop:/usr/app/src# python db_mgtor.py db_config.ini jobConfig.json
+
       
       
