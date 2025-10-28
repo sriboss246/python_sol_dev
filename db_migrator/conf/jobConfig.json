@@ -1,12 +1,12 @@
 {
-  "oto_params": {
+  "ot_params": {
 
     "table_names": ["process_master"],
     "backup": "false",
     "backup_query": "create table if not exists $backup_table_name as select * from $table_name",
     "validations": "true",
 
-    "oto_queries": [
+    "ot_queries": [
       {
         "query_name": "data_insert",
         "draft_query": "insert into process_master (process_id,process_name,process_type,description,update_time,insert_time) values ('$process_id','$process_name','$process_type','$description',current_timestamp,current_timestamp) ",
@@ -15,10 +15,10 @@
         ],
         "run_param_set": [
           {
-            "process_id": "process102",
-			"process_name" : "INIT_PR1",
+            "process_id": "process103",
+			"process_name" : "INIT_PR2",
 			"process_type":"CREATE",
-			"description":"Initiation Process2"
+			"description":"Initiation Process2.1"
           }
         ]
       }
@@ -31,7 +31,7 @@
         "output_schema": ["count"],
         "param_key_list": ["process_id"],
         "run_param_set": [
-          { "process_id":"process102",
+          { "process_id":"process103",
             "expected_value": [{"count": 1}]
           }
 

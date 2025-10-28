@@ -20,8 +20,8 @@ if numOfArgs < 2 :
 configFilePath=sys.argv[1]
 print(config.read(configFilePath))
 
-oto_config_file=open(sys.argv[2])
-oto_config=json.load(oto_config_file)
+ot_config_file=open(sys.argv[2])
+ot_config=json.load(ot_config_file)
 
 logger=logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -103,19 +103,19 @@ def validation(validationQueryList,flag,query_name,seq,cursor) :
 
 
 
-def data_oto() :
+def data_ot() :
 
-    table_list= oto_config['oto_params']['table_names']
-    backup_flag = oto_config['oto_params']['backup']
-    queries = oto_config['oto_params']['oto_queries']
-    validationQueries = oto_config['oto_params']['validation_queries']
-    validation_flag=oto_config['oto_params']['validations']
+    table_list= ot_config['ot_params']['table_names']
+    backup_flag = ot_config['ot_params']['backup']
+    queries = ot_config['ot_params']['ot_queries']
+    validationQueries = ot_config['ot_params']['validation_queries']
+    validation_flag=ot_config['ot_params']['validations']
     length = len(queries)
     conn = db_connnection(config)
     cursor = conn.cursor()
 
     if backup_flag == 'true' :
-        backup_query = str(oto_config['oto_params']['backup_query'])
+        backup_query = str(ot_config['ot_params']['backup_query'])
         for t in range(len(table_list)) :
             backup_table_name = table_list[t]+'_backup_'+str(datetime.today().date())
             backup_table_name=str(backup_table_name).replace('-','_')
@@ -157,4 +157,4 @@ def data_oto() :
             print('')
             temp_query=query_draft
 
-data_oto()
+data_ot()
